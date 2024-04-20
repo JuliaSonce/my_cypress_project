@@ -1,4 +1,9 @@
+import {User} from "../models/User";
+
+
 export class GaragePageLocators{
+     baseUrl = "https://guest:welcome2qauto@qauto2.forstudy.space/";
+     profilePageUrl = `${this.baseUrl}panel/profile`
     headerNavContainer() {
         return cy.xpath(`//app-root/app-global-layout//app-header/header/div/div`)
     }
@@ -62,5 +67,12 @@ export class GaragePageLocators{
   mainProfieContainer(){
     return cy.get('.main')
   }
+  
+  validateUserName() {
+    const user = User.validUser();
+    const userFullName = `${user.name} ${user.lastName}`;
+    cy.visit(this.profilePageUrl)
+    this.mainProfieContainer().should('contain', userFullName);
+}
 }
 export const garagePageLocators = new GaragePageLocators;

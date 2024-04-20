@@ -1,5 +1,7 @@
 export class BasePageLocators {
-
+    
+    baseUrl = "qauto2.forstudy.space/";
+    signUpValidPage = `${this.baseUrl}panel/garage`
  signInButton() {
     return cy.xpath(`//button[@class="btn btn-outline-white header_signin"]`);
  }
@@ -55,6 +57,19 @@ footerInfoText2() {
 footerGlobal() {
     return cy.xpath(`//app-root/app-global-layout//app-footer/footer`);
 }
-   
+
+signUpForm(user) {
+    this.signUpName().type(user.name).should('have.value', user.name);
+    this.signupLastName().type(user.lastName).should('have.value', user.lastName);
+    this.signupEmail().type(user.email).should('have.value', user.email);
+    this.signupPassword().type(user.password).should('have.value', user.password);
+    this.signupRepeatPassword().type(user.password).should('have.value', user.password);
+    this.registerButton().contains('Register').click();
 }
-export const startPageLocators = new BasePageLocators();
+
+
+validateSignUp() {
+    cy.url().should('contain', this.signUpValidPage)
+}
+}
+export const basePageLocators = new BasePageLocators();
