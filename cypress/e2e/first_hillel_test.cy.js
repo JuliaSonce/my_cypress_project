@@ -11,7 +11,7 @@ describe('Test qaauto Sign in', () => {
     it('Test Sign up form', () => {
        cy.visit(`/`); 
       basePageLocators.signUpButton().should('exist').click();
-      signUpForm(User.validUser());
+      signUpForm(User.validUnregisteredUser());
       validateSignUp();
       validateUserName();
     })

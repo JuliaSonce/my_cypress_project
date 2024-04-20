@@ -55,6 +55,16 @@ footerInfoText2() {
 footerGlobal() {
     return cy.xpath(`//app-root/app-global-layout//app-footer/footer`);
 }
+signInEmailInput() {
+    return cy.xpath(`//html//input[@id='signinEmail']`);
+}
+signInPasswordInput() {
+    return cy.xpath(`//html//input[@id='signinPassword']`);
+}
+signInPassworLoginButton() {
+    return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-signin-modal/div[3]/button[2]`);
+}
+
    
 }
 export const startPageLocators = new BasePageLocators();
