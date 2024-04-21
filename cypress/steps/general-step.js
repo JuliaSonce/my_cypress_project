@@ -1,4 +1,4 @@
-import { startPageLocators } from '../pages/BasePageLocators.js';
+import { startPageLocators } from '../pages/BasePage.js';
 import { User } from '../models/User.js';
 import HomePage from '../pages/HomePage.js';
 import GaragePaage from '../pages/GaragePage.js';
@@ -19,11 +19,13 @@ export default class GeneralStep {
         let validRegistereUser = User.validRegisteredUser();
         this.login(validRegistereUser.email, validRegistereUser.password);
     }
-    datePicker(day, month, year) {
-        cy.get('select[title="Select month"]').select(month);
-        cy.get('select[title="Select year"]').select(year);
 
-    }
+
+    // datePicker(day, month, year) {
+    //     cy.get('select[title="Select month"]').select(month);
+    //     cy.get('select[title="Select year"]').select(year);
+
+    // }
 }
 
 export const generalStep = new GeneralStep();

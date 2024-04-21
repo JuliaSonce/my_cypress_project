@@ -1,9 +1,10 @@
 /// <reference types="cypress" />
-import { BasePageLocators } from '../pages/BasePageLocators.js';
+import { basePage } from '../pages/BasePage.js';
 import { generalStep } from '../steps/general-step.js';
 import { homePage } from '../pages/HomePage.js';
 import { User } from '../models/User.js';
 import { garageStep } from '../steps/garage-step.js';
+
 const car = {
   brand: "BMW",
   modal: "X5",
