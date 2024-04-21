@@ -1,9 +1,10 @@
-function formattetDate(date) {
-    const result = date.toLocaleDateString('en-US', {
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-    })
+export function formatDate(date) {
+    const day = date.getDate();
+    let month = date.getMonth() + 1;
+    const year = date.getFullYear();
 
-    return result
-};
-
-console.log(formattetDate(new Date()))
+    if (month < 10) {
+        month = '0' + month;
+    }
+    return day + '.' + month + '.' + year;
+}

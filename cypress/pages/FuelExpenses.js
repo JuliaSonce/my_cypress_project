@@ -3,7 +3,7 @@ export default class FuelExpenses {
         return cy.xpath(`/html//button[@id='carSelectDropdown']`);
     };
     static get addAnExpenseButton() {
-        return cy.xpath(`//body/app-root/app-global-layout/div[@class='global - layout']/div[@class='app - wrapper']/div[@class='app - content']/app-panel-layout//app-fuel-expenses//button[@class='btn btn - primary']`)
+        return cy.get(':nth-child(1) > app-car > .car > .car-heading > .car_actions > .car_add-expense');
     };
     static get vehicleFiled() {
         return cy.xpath(`/html//select[@id='addExpenseCar']`);
@@ -31,5 +31,16 @@ export default class FuelExpenses {
     };
     static get closelButton() {
         return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-add-expense-modal/div[@class='modal-header']/button[@type='button']`);
+    };
+    static get expensesTable() {
+        return cy.get('.expenses_table.table')
+    };
+    static get deleteExpensesButton() {
+        return cy.get('.btn.btn-delete')
+    };
+
+    static get deleteExpensesConfirmationButton() {
+        return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-delete-expense-modal/div[3]/button[2]`)
+
     };
 }

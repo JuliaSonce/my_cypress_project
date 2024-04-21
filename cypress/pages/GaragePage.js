@@ -24,35 +24,42 @@ export class GaragePage {
     static get addFuelExpenseButton() {
         return cy.get('.btn.btn-success.car_add-expense')
     };
-    static get dataPickerButton() {
+    static get datePickerButton() {
         return cy.get('.input-group-append > .btn > .icon')
     }
-    static get removeCarButton() {
-        return cy.get('.btn.btn-outline-danger')
+    static get removeCarDialogButton() {
+        return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-edit-car-modal/div[3]/button[@type='button']`);
     }
-    static get additCarCard() {
-        return cy.get('.car-list .car-item:nth-of-type(1) .jumbotron')
+    static get removeCarConfirmationButton() {
+        return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-remove-car-modal/div[3]/button[2]`);
     }
-    static get CardNameOfAdditCar() {
+    static get addedCarCard() {
+        return cy.xpath(`//body/app-root/app-global-layout/div[@class='global-layout']/div[@class='app-wrapper']/div[@class='app-content']/app-panel-layout//app-garage//ul[@class='car-list']//app-car/div[@class='car jumbotron']`);
+    }
+    static get cardNameOfAddedCar() {
         return cy.get('.car-group > .car_name')
     }
-    static get CardCarLogo() {
+    static get cardCarLogo() {
         return cy.get('.car-logo_img')
     }
-    static get CardCarLogo() {
+    static get cardCarLogo() {
         return cy.get('.car-logo_img')
     }
-    static get CardDateMileageOfAddedCar() {
+    static get cardDateMileageOfAddedCar() {
         return cy.get('.car-body > .car_update-mileage')
     }
-    static get CardMileageOfAddedCar() {
-        return cy.get('.car-list .car-item:nth-of-type(4) .update-mileage-form_input')
+    static get cardMileageOfAddedCar() {
+        return cy.get(`li:nth-of-type(1) > app-car app-update-mileage-form > .ng-pristine.ng-untouched.ng-valid.update-mileage-form > input[name='miles']`)
     }
-    static get CardUpdateButton() {
+    static get cardUpdateButton() {
         return cy.get('.update-mileage-form > .btn.btn-secondary.btn-sm.update-mileage-form_submit')
     }
+    static get cardEditButton() {
+        return cy.get(':nth-child(1) > app-car > .car > .car-heading > .car_actions > .car_edit > .icon')
+    }
 
-    static mainProfieContainer() {
+
+    static mainProfileContainer() {
         return cy.get('.main')
     }
 
@@ -61,6 +68,6 @@ export class GaragePage {
         const user = User.validRegisteredUser;
         const userFullName = `${user.name} ${user.lastName}`;
         cy.visit(this.profilePageUrl)
-        this.mainProfieContainer().should('contain', userFullName);
+        this.mainProfileContainer().should('contain', userFullName);
     }
 }

@@ -2,9 +2,23 @@ export class BasePage {
 
     baseUrl = "qauto2.forstudy.space/";
     signUpValidPage = `${this.baseUrl}panel/garage`
+
     signInButton() {
         return cy.xpath(`//button[@class="btn btn-outline-white header_signin"]`);
     }
+
+    signInPasswordLoginButton() {
+        return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-signin-modal/div[3]/button[2]`);
+    }
+
+    signInEmailInput() {
+        return cy.xpath(`/html//input[@id='signinEmail']`);
+    }
+
+    signInPasswordInput() {
+        return cy.xpath(`/html//input[@id='signinPassword']`);
+    }
+
     guestLoginButton() {
         return cy.xpath(`//button[@class='header-link -guest']`);
     }
@@ -22,7 +36,7 @@ export class BasePage {
         return cy.xpath(`//input[@id="signupLastName"]`);
     }
     signupEmail() {
-        return cy.xpath(`//input[@id="signupEmail"]`);
+        return cy.xpath(`/html//input[@id='signinEmail']`);
     }
     signupPassword() {
         return cy.xpath(`//input[@id="signupPassword"]`);
@@ -45,7 +59,7 @@ export class BasePage {
     headerNavAbout() {
         return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']//app-header//div[@class='container']/div//nav/button[1]`);
     }
-    headerNavCotacts() {
+    headerNavContacts() {
         return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']//app-header//div[@class='container']/div//nav/button[2]`);
     }
     footerInfoText1() {
@@ -66,7 +80,6 @@ export class BasePage {
         this.signupRepeatPassword().type(user.password).should('have.value', user.password);
         this.registerButton().contains('Register').click();
     }
-
 
     validateSignUp() {
         cy.url().should('contain', this.signUpValidPage)

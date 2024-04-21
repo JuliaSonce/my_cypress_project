@@ -2,7 +2,7 @@ export default class HomePage {
     static headerNavContainer() {
         return cy.xpath(`//app-root/app-global-layout//app-header/header/div/div`);
     }
-    static headerGaragMenu() {
+    static headerGarageMenu() {
         return cy.xpath(`//app-root/app-global-layout//app-header/header/div/div/div/nav/a[@href='/panel/garage']`);
     }
     static headerFuelExpensesMenu() {
@@ -11,22 +11,22 @@ export default class HomePage {
     static headerInstructionsMenu() {
         return cy.xpath(`//app-root/app-global-layout//app-header/header/div/div/div/nav/a[@href='/panel/instructions']`);
     }
-    static headerMyProfielDropdown() {
+    static headerMyProfileDropdown() {
         return cy.xpath(`/html//button[@id='userNavDropdown']`);
     }
-    static seidbarGarageMenu() {
+    static sidebarGarageMenu() {
         return cy.get(`.flex-column > .sidebar_btn:nth-of-type(1)`);
     }
-    static seidbarFuelExpensesMenu() {
-        return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']//app-panel-layout//div[@class='row']/div[1]/nav/a[@href='/panel/garage']`);
+    static sidebarFuelExpensesMenu() {
+        return cy.get('[routerlink="expenses"]');
     }
-    static seidbarInstructionsMenu() {
+    static sidebarInstructionsMenu() {
         return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']//app-panel-layout//div[@class='row']/div[1]/nav/a[@href='/panel/instructions']`);
     }
-    static seidbarProfileMenu() {
+    static sidebarProfileMenu() {
         return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']//app-panel-layout//div[@class='row']/div[1]/nav/a[@href='/panel/instructions']`);
     }
-    static seidbarSettingsMenu() {
+    static sidebarSettingsMenu() {
         return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']/div[@class='app-wrapper']/div[@class='app-content']/app-panel-layout//nav//a[@href='/panel/settings']`);
     }
     static get logoutButton() {

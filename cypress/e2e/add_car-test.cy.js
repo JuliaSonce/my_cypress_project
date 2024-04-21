@@ -6,21 +6,25 @@ import { User } from '../models/User.js';
 import { garageStep } from '../steps/garage-step.js';
 
 const car = {
-  brand: "BMW",
-  modal: "X5",
-  mileage: "200"
+    brand: "BMW",
+    model: "X5",
+    mileage: "200"
 }
 
-describe('Test agging car functionality', () => {
-  beforeEach(() => {
-    cy.visit(`/`);
-    generalStep.loginValidRegisteredUser();
-    generalStep.verifyLoginButtonIsVisible();
+describe('Test adding car functionality', () => {
+    beforeEach(() => {
+        cy.visit(`/`);
+        generalStep.loginValidRegisteredUser();
+        generalStep.verifyLoginButtonIsVisible();
+    })
 
-  })
-  it('Add new car to user garage', () => {
-    garageStep.addNewCar(car);
-    garageStep.validateAddetCar()
+    it('Add new car to user garage', () => {
+        garageStep.addNewCar(car);
+        garageStep.validateAddedCar(car);
+    })
 
-  })
+    it('Delete added car', () => {
+        garageStep.deleteAddedCar(car);
+        garageStep.validateIfNoCars();
+    })
 })

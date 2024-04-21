@@ -1,14 +1,14 @@
-import { startPageLocators } from '../pages/BasePage.js';
+import { basePage } from '../pages/BasePage.js';
 import { User } from '../models/User.js';
 import HomePage from '../pages/HomePage.js';
-import GaragePaage from '../pages/GaragePage.js';
+import { GaragePage } from '../pages/GaragePage.js';
 
 export default class GeneralStep {
     login(email, password) {
-        startPageLocators.signInButton().click();
-        startPageLocators.signInEmailInput().type(email);
-        startPageLocators.signInPasswordInput().type(password);
-        startPageLocators.signInPassworLoginButton().click();
+        basePage.signInButton().click();
+        basePage.signInEmailInput().type(email);
+        basePage.signInPasswordInput().type(password);
+        basePage.signInPasswordLoginButton().click();
     }
 
     verifyLoginButtonIsVisible() {
@@ -16,16 +16,9 @@ export default class GeneralStep {
     }
 
     loginValidRegisteredUser() {
-        let validRegistereUser = User.validRegisteredUser();
-        this.login(validRegistereUser.email, validRegistereUser.password);
+        let validRegisteredUser = User.validRegisteredUser();
+        this.login(validRegisteredUser.email, validRegisteredUser.password);
     }
-
-
-    // datePicker(day, month, year) {
-    //     cy.get('select[title="Select month"]').select(month);
-    //     cy.get('select[title="Select year"]').select(year);
-
-    // }
 }
 
 export const generalStep = new GeneralStep();

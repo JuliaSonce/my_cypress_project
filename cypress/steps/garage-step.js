@@ -1,27 +1,34 @@
 
 import GeneralStep from '../steps/general-step.js';
-import GaragePaage from '../pages/GaragePage.js';
+import { GaragePage } from '../pages/GaragePage.js';
 export class GarageStep extends GeneralStep {
     addNewCar(car) {
-        GaragePaage.addCarButton.click();
-        GaragePaage.carBrand.select(car.brand);
-        GaragePaage.carModel.select(car.modal);
-        GaragePaage.mileage.type(car.mileage);
-        GaragePaage.saveButton.click()
+        GaragePage.addCarButton.click();
+        GaragePage.carBrand.select(car.brand);
+        GaragePage.carModel.select(car.model);
+        GaragePage.mileage.type(car.mileage);
+        GaragePage.saveButton.click()
     }
-    validateAddetCar(brand, modal, mileage) {
-        GaragePaage.CardNameOfAdditCar.should('contain.text', brand + ' ' + model);
-        GaragePaage.CardMileageOfAddedCar.should('contain.text', mileage)
+
+    validateAddedCar(car) {
+        GaragePage.cardNameOfAddedCar.should('contain.text', car.brand + ' ' + car.model);
+        GaragePage.cardMileageOfAddedCar.should('have.value', car.mileage);
     }
-    deleteAddidCar() {
-        GaragePaage.additCarCard.eq(0).addCarButton.click();
-        GaragePaage.deleteAddidCar.click()
+
+    deleteAddedCar() {
+        GaragePage.cardEditButton.click();
+        GaragePage.removeCarDialogButton.click();
+        GaragePage.removeCarConfirmationButton.click();
+    }
+
+    validateIfNoCars() {
+        GaragePage.addedCarCard.should('not.exist');
     }
 
     addAnExpense(day, month, year) {
-        GaragePaage.addFuelExpenseButton.eq(0).click();
-        GaragePaage.dataPickerButton.click();
-        this.datePicker(day, month, year)
+        GaragePage.addFuelExpenseButton.eq(0).click();
+        GaragePage.dataPickerButton.click();
+
 
     }
 }
