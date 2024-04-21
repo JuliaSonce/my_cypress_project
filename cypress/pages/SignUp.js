@@ -1,5 +1,5 @@
-import {startPageLocators} from "./BasePageLocators";
-import {User} from "../models/User"
+import { startPageLocators } from "./BasePageLocators";
+import { User } from "../models/User"
 const baseUrl = "qauto2.forstudy.space/";
 const signUpValidPage = `${baseUrl}panel/garage`
 export function signUpForm(user) {

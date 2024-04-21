@@ -1,9 +1,43 @@
 export default class HomePage {
-    static get logout() {
-        return cy.get('.sidebar > .btn-link', {timeout:10000})
+    static headerNavContainer() {
+        return cy.xpath(`//app-root/app-global-layout//app-header/header/div/div`);
     }
-    
-
+    static headerGaragMenu() {
+        return cy.xpath(`//app-root/app-global-layout//app-header/header/div/div/div/nav/a[@href='/panel/garage']`);
+    }
+    static headerFuelExpensesMenu() {
+        return cy.xpath(`//app-root/app-global-layout//app-header/header/div/div/div/nav/a[@href='/panel/expenses']`);
+    }
+    static headerInstructionsMenu() {
+        return cy.xpath(`//app-root/app-global-layout//app-header/header/div/div/div/nav/a[@href='/panel/instructions']`);
+    }
+    static headerMyProfielDropdown() {
+        return cy.xpath(`/html//button[@id='userNavDropdown']`);
+    }
+    static seidbarGarageMenu() {
+        return cy.get(`.flex-column > .sidebar_btn:nth-of-type(1)`);
+    }
+    static seidbarFuelExpensesMenu() {
+        return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']//app-panel-layout//div[@class='row']/div[1]/nav/a[@href='/panel/garage']`);
+    }
+    static seidbarInstructionsMenu() {
+        return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']//app-panel-layout//div[@class='row']/div[1]/nav/a[@href='/panel/instructions']`);
+    }
+    static seidbarProfileMenu() {
+        return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']//app-panel-layout//div[@class='row']/div[1]/nav/a[@href='/panel/instructions']`);
+    }
+    static seidbarSettingsMenu() {
+        return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']/div[@class='app-wrapper']/div[@class='app-content']/app-panel-layout//nav//a[@href='/panel/settings']`);
+    }
+    static get logoutButton() {
+        return cy.get(".sidebar > .btn.btn-link.btn-sidebar", { timeout: 10000 });
+    }
+    static addCarButtonGaragePage() {
+        return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']/div[@class='app-wrapper']/div[@class='app-content']/app-panel-layout/div[@class='panel-layout']//app-garage//button[@class='btn btn-primary']`);
+    }
+    static footerTest() {
+        return cy.xpath(`//app-root/app-global-layout/div[@class='global-layout']/app-footer//div[@class='container']/div/div[1]`);
+    }
 }
 
 export const homePage = new HomePage();
