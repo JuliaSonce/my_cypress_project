@@ -19,7 +19,7 @@ describe('Test adding car expenses', () => {
   beforeEach(() => {
     cy.visit(`/`);
     generalStep.loginValidRegisteredUser();
-    generalStep.verifyLoginButtonIsVisible();
+    generalStep.verifyUserIsLoggedIn();
   })
 
   it('Add expenses to car', () => {

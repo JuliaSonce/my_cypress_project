@@ -57,10 +57,14 @@ export class GaragePage {
     static get cardEditButton() {
         return cy.get(':nth-child(1) > app-car > .car > .car-heading > .car_actions > .car_edit > .icon')
     }
-
-
+    static get dataPicker() {
+        return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-add-expense-modal//app-add-expense-form/form//button[@type='button']/span[@class='icon icon-calendar']`)
+    }
     static mainProfileContainer() {
         return cy.get('.main')
+    }
+    static carsList() {
+        return cy.get('.car-list').find('.care_name')
     }
 
     static validateUserName() {

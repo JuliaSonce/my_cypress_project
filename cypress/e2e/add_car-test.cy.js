@@ -15,7 +15,7 @@ describe('Test adding car functionality', () => {
     beforeEach(() => {
         cy.visit(`/`);
         generalStep.loginValidRegisteredUser();
-        generalStep.verifyLoginButtonIsVisible();
+        generalStep.verifyUserIsLoggedIn();
     })
 
     it('Add new car to user garage', () => {

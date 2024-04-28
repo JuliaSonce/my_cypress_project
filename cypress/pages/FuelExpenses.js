@@ -41,6 +41,5 @@ export default class FuelExpenses {
 
     static get deleteExpensesConfirmationButton() {
         return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-delete-expense-modal/div[3]/button[2]`)
-
     };
 }

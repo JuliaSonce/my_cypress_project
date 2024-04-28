@@ -19,6 +19,6 @@ export function randomPassword() {
         password += alphabet.charAt(index);
     }
 
-    password += "A1"
-    return password
+    password += "A1";
+    return password;
 }

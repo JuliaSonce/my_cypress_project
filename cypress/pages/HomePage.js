@@ -15,7 +15,7 @@ export default class HomePage {
         return cy.xpath(`/html//button[@id='userNavDropdown']`);
     }
     static sidebarGarageMenu() {
-        return cy.get(`.flex-column > .sidebar_btn:nth-of-type(1)`);
+        return cy.get(`cy.get('[routerlink="garage"]')`);
     }
     static sidebarFuelExpensesMenu() {
         return cy.get('[routerlink="expenses"]');

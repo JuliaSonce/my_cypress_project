@@ -1,0 +1,19 @@
+
+{
+        "statusCode": 200,
+        "body": {
+          "status": "ok",
+          "data": [
+            {
+              "id": 96,
+              "carBrandId": 1,
+              "carModelId": 1,
+              "initialMileage": 11,
+              "updatedMileageAt": "2021-05-17T15:26:36.000Z",
+              "mileage": 111,
+              "brand": "Audi",
+              "model": "TT",
+              "logo": "audi.png"
+            }]
+        }
+}

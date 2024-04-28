@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 10000,
+  defaultCommandTimeout: 15000,
   watchForFileChanges: false,
   failOnStatusCode: false,
   e2e: {

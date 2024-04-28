@@ -27,7 +27,8 @@ export class GarageStep extends GeneralStep {
 
     addAnExpense(day, month, year) {
         GaragePage.addFuelExpenseButton.eq(0).click();
-        GaragePage.dataPickerButton.click();
+        GaragePage.dataPicker.click();
+        this.dataPicker(day, month, year)
 
 
     }
