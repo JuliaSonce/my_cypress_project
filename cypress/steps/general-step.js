@@ -11,7 +11,7 @@ export default class GeneralStep {
         basePage.signInPasswordLoginButton().click();
     }
 
-    verifyLoginButtonIsVisible() {
+    verifyUserIsLoggedIn() {
         HomePage.logoutButton.should('be.visible');
     }
 

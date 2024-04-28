@@ -1,6 +1,7 @@
-import {randomEmail} from "../e2e/random_email_generator";
+import { randomEmail } from "../e2e/random_email_generator";
+import { randomPassword } from "../e2e/random_email_generator";
 export class User {
-  constructor(name, lastName,email, password) {
+  constructor(name, lastName, email, password) {
     this.name = name;
     this.lastName = lastName;
     this.email = email;
@@ -8,7 +9,7 @@ export class User {
   }
 
   static validUnregisteredUser() {
-    let result = new User("July", "Nachbarn", randomEmail(), "3InMrL5cJLf5P7Q")
+    let result = new User("July", "Nachbarn", randomEmail(), randomPassword())
     return result;
   }
 
@@ -16,5 +17,4 @@ export class User {
     let result = new User("Test", "Testowich", "TestTestowichyou@gmail.com", "TestTest123!");
     return result;
   }
-        
 }
