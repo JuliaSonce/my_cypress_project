@@ -42,4 +42,23 @@ export default class FuelExpenses {
     static get deleteExpensesConfirmationButton() {
         return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-delete-expense-modal/div[3]/button[2]`)
     };
+
+    static get reportedDate() {
+        return cy.get('tr > td:nth-of-type(1)');
+
+    };
+    static get mileage() {
+        return cy.get('tr > td:nth-of-type(2)');
+    };
+
+    static get litersUsed() {
+        return cy.get('tr > td:nth-of-type(3)');
+    };
+
+    static get totalCost() {
+        return cy.get('tr > td:nth-of-type(4)');
+    };
+
+
+
 }

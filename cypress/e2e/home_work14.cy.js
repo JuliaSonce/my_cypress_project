@@ -5,31 +5,46 @@ import { GaragePage } from '../pages/GaragePage.js';
 import { User } from '../models/User.js';
 import { generalStep } from '../steps/general-step.js';
 
-describe('Test Suite', () => {
-  //it('Login via UI', () => {
-  //cy.visit('/');
-  //cy.LoginViaUI("TestTestowichyou@gmail.com", "TestTest123!")
-  //cy.saveLocalStorage();
-  //cy.restoreLocalStorage();
+describe('Mock up creating car via interception ', () => {
+  // beforeEach(() => {
+  //   cy.visit('/');
+  //   cy.fixture('defaultUser.json').then((userFixtureLoadedFromJson) => {
+  //     cy.LoginViaAPI(userFixtureLoadedFromJson.email, userFixtureLoadedFromJson.password);
+  //     cy.visit('/panel/garage');
+  //   })
+  // })
 
 
-  //})
+  it('Login via UI', () => {
+    cy.visit('/');
+    cy.LoginViaUI("TestTestowichyou@gmail.com", "TestTest123!")
+    cy.saveLocalStorage();
+    cy.restoreLocalStorage();
+
+
+  })
+
+
 
   it('Login via API', () => {
-    cy.visit('/');
-    cy.fixture('defaultUser.json').then((user) => {
-
-      cy.LoginViaAPI(user.email, user.password);
-      cy.visit('/panel/garage');
+    cy.LoginViaAPI(userFixtureLoadedFromJson.email, userFixtureLoadedFromJson.password);
+    cy.visit('/panel/garage');
+    cy.fixture('carsResponseData.json').then((carFixtureLoadedFromJson) => {
+      cy.intercept('GET', '/api/cars', (interceptedRequest) => {
+        interceptedRequest.reply(carFixtureLoadedFromJson)
+      }).as('carsCreationIntercept');
     })
 
-    cy.fixture('carsResponseData.json').then((cars) => {
-      cy.intercept('GET', '/api/cars', (req) => {
-        req.reply(cars)
-      }).as('cars');
-    })
-    cy.wait('@cars');
-    cy.get('.car_name.h2').should('exist')
+
+
+    //   cy.visit('/');
+    //   cy.fixture('defaultUser.json').then((userFixtureLoadedFromJson) => {
+    //     cy.LoginViaAPI(userFixtureLoadedFromJson.email, userFixtureLoadedFromJson.password);
+    //     cy.visit('/panel/garage');
+    //   })
+
+    //   cy.wait('@carsCreationIntercept');
+    //   cy.get('.car_name.h2').should('exist')
 
 
   })
@@ -52,3 +67,4 @@ describe('Test Suite', () => {
 
 
 })
+

@@ -64,6 +64,7 @@ Cypress.Commands.add('LoginViaAPI', (email, password, remember = false) => {
         return cy.wrap(response.body.data.userId).as('userID')
 
     });
+
 });
 
 
