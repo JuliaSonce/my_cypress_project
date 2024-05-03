@@ -1,14 +1,14 @@
 {
   "status": "ok",
   "data": {
-    "id": 94,
-    "carBrandId": 1,
-    "carModelId": 1,
-    "initialMileage": 122,
-    "updatedMileageAt": "2021-05-17T15:26:36.000Z",
-    "mileage": 122,
-    "brand": "Audi",
-    "model": "TT",
-    "logo": "audi.png"
+    "id": 118268,
+    "carBrandId": 2,
+    "carModelId": 8,
+    "initialMileage": 200,
+    "updatedMileageAt": "2024-04-29T13:17:36.000Z",
+    "mileage": 200,
+    "brand": "BMW",
+    "model": "X5",
+    "logo": "bmw.png"
   }
 }
