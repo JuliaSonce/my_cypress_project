@@ -57,17 +57,23 @@ export class GaragePage {
     static get cardEditButton() {
         return cy.get(':nth-child(1) > app-car > .car > .car-heading > .car_actions > .car_edit > .icon')
     }
-
-
+    static get dataPicker() {
+        return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-add-expense-modal//app-add-expense-form/form//button[@type='button']/span[@class='icon icon-calendar']`)
+    }
     static mainProfileContainer() {
-        return cy.get('.main')
+        return cy.get('.profile_name')
+    }
+    static carsList() {
+        return cy.get('.car-list').find('.care_name')
     }
 
-    static validateUserName() {
+    static validateUserName(user) {
+        cy.log(`Checking user: ======== ${user.name}`);
         // We are using valid unregistered user, as we want to test just signed up user
-        const user = User.validRegisteredUser;
-        const userFullName = `${user.name} ${user.lastName}`;
+        //const userFullName = `${user.name} ${user.lastName}`;
+        const userName = `${user.name}`
         cy.visit(this.profilePageUrl)
-        this.mainProfileContainer().should('contain', userFullName);
+        this.mainProfileContainer().should('contain', userName);
+
     }
 }

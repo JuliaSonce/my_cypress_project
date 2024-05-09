@@ -7,7 +7,7 @@ export class BasePage {
         return cy.xpath(`//button[@class="btn btn-outline-white header_signin"]`);
     }
 
-    signInPasswordLoginButton() {
+    loginButton() {
         return cy.xpath(`//ngb-modal-window[@role='dialog']/div[@role='document']//app-signin-modal/div[3]/button[2]`);
     }
 
@@ -36,7 +36,7 @@ export class BasePage {
         return cy.xpath(`//input[@id="signupLastName"]`);
     }
     signupEmail() {
-        return cy.xpath(`/html//input[@id='signinEmail']`);
+        return cy.xpath(`/html//input[@id='signupEmail']`);
     }
     signupPassword() {
         return cy.xpath(`//input[@id="signupPassword"]`);

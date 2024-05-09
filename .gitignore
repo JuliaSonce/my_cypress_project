@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# cypress recordings during a test run are temporary files
+/cypress/videos/
+/cypress/downloads/
+/cypress/screenshots/
+/reports/
+/mochawesome-report/
+/mochawesome.json

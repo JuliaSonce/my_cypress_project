@@ -5,10 +5,14 @@ import { User } from '../models/User.js';
 
 describe('Test qaauto Sign in', () => {
   it('Test Sign up form', () => {
+    const userToRegister = User.validUnregisteredUser()
     cy.visit(`/`);
     basePage.signUpButton().should('exist').click();
-    basePage.signUpForm(User.validUnregisteredUser());
+    basePage.signUpForm(userToRegister);
     basePage.validateSignUp();
-    GaragePage.validateUserName();
+    GaragePage.validateUserName(userToRegister);
   })
 })
+
+
+

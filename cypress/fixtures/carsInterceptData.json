@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "data": {
+    "id": 118268,
+    "carBrandId": 2,
+    "carModelId": 8,
+    "initialMileage": 200,
+    "updatedMileageAt": "2024-04-29T13:17:36.000Z",
+    "mileage": 200,
+    "brand": "BMW",
+    "model": "X5",
+    "logo": "bmw.png"
+  }
+}

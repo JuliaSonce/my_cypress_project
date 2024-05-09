@@ -22,6 +22,14 @@ export class FuelExpensesSteps extends GeneralStep {
     validateAddedExpenses() {
         FuelExpenses.expensesTable.should('exist');
     }
+    validateAddedExpensesData(expenseData) {
+        HomePage.sidebarFuelExpensesMenu().click()
+        FuelExpenses.expensesTable.should('exist');
+        FuelExpenses.reportedDate.should('contain', formatDate(new Date()))
+        FuelExpenses.mileage.should('contain', expenseData.mileage)
+        FuelExpenses.litersUsed.should('contain', expenseData.liters)
+        FuelExpenses.totalCost.should('contain', expenseData.totalCost)
+    }
 
     navigateToExpenses() {
         HomePage.sidebarFuelExpensesMenu().click();

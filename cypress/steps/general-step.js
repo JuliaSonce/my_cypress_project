@@ -8,7 +8,7 @@ export default class GeneralStep {
         basePage.signInButton().click();
         basePage.signInEmailInput().type(email);
         basePage.signInPasswordInput().type(password);
-        basePage.signInPasswordLoginButton().click();
+        basePage.loginButton().click();
     }
 
     verifyUserIsLoggedIn() {
