@@ -61,10 +61,36 @@ function getDataUsingRace(userId, toDoId) {
 }
 // Task 3 
 
+async function getTodosAsync(id) {
+    let endpoint = `https://jsonplaceholder.typicode.com/todos/${id}`;
+    try {
+
+        const response = await fetch(endpoint);
+        const ourTodoObject = await response.json();
+        return ourTodoObject;
+    } catch (error) {
+        console.log('Error: ' + error);
+        throw error;
+    }
+
+}
+
+async function getUserAsync(id) {
+    let endpoint = `https://jsonplaceholder.typicode.com/users/${id}`;
+
+    try {
+        const response = await fetch(endpoint);
+        const userObject = await response.json();
+        return userObject;
+    } catch (error) {
+        console.log('Code failed ' + error);
+        throw error;
+    }
+}
 async function getDataUsingAll(userId, toDoId) {
     const result = await Promise.all([
-        await getTodos(toDoId),
-        await getUser(userId)
+        await getTodosAsync(toDoId),
+        await getUserAsync(userId)
     ]);
 
     return result;
@@ -73,8 +99,8 @@ async function getDataUsingAll(userId, toDoId) {
 
 async function getDataUsingRace(userId, toDoId) {
     const result = await Promise.race([
-        await getTodos(toDoId),
-        await getUser(userId)
+        await getTodosAsync(toDoId),
+        await getUserAsync(userId)
     ]);
 
     return result;
