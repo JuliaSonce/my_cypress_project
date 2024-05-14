@@ -1,3 +1,6 @@
 {
-    "editor.fontFamily": "InconsolataLGC Nerd Font, 'Courier New', monospace"
+    "editor.fontFamily": "InconsolataLGC Nerd Font, 'Courier New', monospace",
+    "cSpell.words": [
+        "Todos"
+    ]
 }
