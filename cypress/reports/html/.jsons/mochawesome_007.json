@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-22T18:08:56.157Z",
+    "end": "2024-06-22T18:08:59.694Z",
+    "duration": 3537,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "adcdd1e4-2267-4865-937b-d14fdf0e62ea",
+      "title": "",
+      "fullFile": "cypress/e2e/first_hillel_test.cy.js",
+      "file": "cypress/e2e/first_hillel_test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b70d1517-9dc7-4839-b116-d1153cb2eff2",
+          "title": "Test qaauto Sign in",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Sign up form",
+              "fullTitle": "Test qaauto Sign in Test Sign up form",
+              "timedOut": null,
+              "duration": 3528,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const userToRegister = _User.User.validUnregisteredUser();\ncy.visit(Cypress.env('baseUrl'));\n//cy.visit(`/`);\n_BasePage.basePage.signUpButton().should('exist').click();\n_BasePage.basePage.signUpForm(userToRegister);\n_BasePage.basePage.validateSignUp();\n_GaragePage.GaragePage.validateUserName(userToRegister);",
+              "err": {},
+              "uuid": "63183c92-5ce6-41ce-83c3-2e1369b6661d",
+              "parentUUID": "b70d1517-9dc7-4839-b116-d1153cb2eff2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "63183c92-5ce6-41ce-83c3-2e1369b6661d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3528,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

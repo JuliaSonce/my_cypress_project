@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-22T17:59:46.746Z",
+    "end": "2024-06-22T17:59:54.152Z",
+    "duration": 7406,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7a1235ab-77e0-4fc9-8f9d-83b5e1950d65",
+      "title": "",
+      "fullFile": "cypress/e2e/add_expenses.cy.js",
+      "file": "cypress/e2e/add_expenses.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "69a3a6e0-e334-4c14-8244-61806e12bd31",
+          "title": "Test adding car expenses",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add expenses to car",
+              "fullTitle": "Test adding car expenses Add expenses to car",
+              "timedOut": null,
+              "duration": 4635,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_garageStep.garageStep.addNewCar(car);\n_garageStep.garageStep.validateAddedCar(car);\n_fuelExpensesStep.fuelExpensesSteps.addAnExpenses(carExpenses);\n_fuelExpensesStep.fuelExpensesSteps.validateAddedExpenses();",
+              "err": {},
+              "uuid": "391206d4-589d-4d74-ae24-192ed0ddd3f8",
+              "parentUUID": "69a3a6e0-e334-4c14-8244-61806e12bd31",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove expenses from car",
+              "fullTitle": "Test adding car expenses Remove expenses from car",
+              "timedOut": null,
+              "duration": 2707,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_fuelExpensesStep.fuelExpensesSteps.navigateToExpenses();\n_fuelExpensesStep.fuelExpensesSteps.deleteExpenses();\n_fuelExpensesStep.fuelExpensesSteps.validateExpensesTableNotExist();\n_fuelExpensesStep.fuelExpensesSteps.navigateToGarage();\n_garageStep.garageStep.deleteAddedCar();",
+              "err": {},
+              "uuid": "de1414e6-73bd-4d27-86b7-ecef801f9058",
+              "parentUUID": "69a3a6e0-e334-4c14-8244-61806e12bd31",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "391206d4-589d-4d74-ae24-192ed0ddd3f8",
+            "de1414e6-73bd-4d27-86b7-ecef801f9058"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 7342,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
