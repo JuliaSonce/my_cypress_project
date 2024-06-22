@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-22T18:08:41.979Z",
+    "end": "2024-06-22T18:08:45.660Z",
+    "duration": 3681,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ad7e5fee-b3a9-471d-a6c6-85c37938e4b8",
+      "title": "",
+      "fullFile": "cypress/e2e/add_car-test.cy.js",
+      "file": "cypress/e2e/add_car-test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8bfb1ac0-5e42-404a-b6cc-59a6c54ce929",
+          "title": "Test adding car functionality",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add new car to user garage",
+              "fullTitle": "Test adding car functionality Add new car to user garage",
+              "timedOut": null,
+              "duration": 3636,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_garageStep.garageStep.addNewCar(car);\n_garageStep.garageStep.validateAddedCar(car);",
+              "err": {},
+              "uuid": "26f3de4e-f773-4b0d-bad5-ac72a4cb4546",
+              "parentUUID": "8bfb1ac0-5e42-404a-b6cc-59a6c54ce929",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "26f3de4e-f773-4b0d-bad5-ac72a4cb4546"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3636,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

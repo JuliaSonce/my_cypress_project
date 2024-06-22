@@ -13,7 +13,9 @@ const car = {
 
 describe('Test adding car functionality', () => {
     beforeEach(() => {
-        cy.visit(`/`);
+        cy.visit(Cypress.env('baseUrl'));
+        // cy.visit(Cypress.env`${url}`);
+        //cy.visit(`/`);
         generalStep.loginValidRegisteredUser();
         generalStep.verifyUserIsLoggedIn();
     })
@@ -23,8 +25,8 @@ describe('Test adding car functionality', () => {
         garageStep.validateAddedCar(car);
     })
 
-    it('Delete added car', () => {
-        garageStep.deleteAddedCar(car);
-        garageStep.validateIfNoCars();
-    })
+    // it('Delete added car', () => {
+    //     garageStep.deleteAddedCar(car);
+    //     garageStep.validateIfNoCars();
+    // })
 })

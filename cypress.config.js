@@ -8,16 +8,20 @@ module.exports = defineConfig({
   failOnStatusCode: false,
   e2e: {
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
+      // require('cypress-mochawesome-reporter/plugin')(on);
     },
-    specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
+    // specPattern: 'cypress/e2e/**/*.{js,jsx,ts,tsx}',
 
-    baseUrl: `https://guest:welcome2qauto@qauto2.forstudy.space`,
+    baseUrl: `https://qauto2.forstudy.space/`,
 
     env: {
-      username: 'guest',
-      password: 'welcome2qauto'
+      baseUrl: `https://guest:welcome2qauto@qauto2.forstudy.space/`,
     },
+
+    // env: {
+    //   username: 'guest',
+    //   password: 'welcome2qauto'
+    // },
 
     testIsolation: true,
     specPattern: "cypress/e2e/**/*.{spec,cy}.js"

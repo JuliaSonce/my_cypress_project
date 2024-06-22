@@ -17,7 +17,8 @@ const carExpenses = {
 
 describe('Test adding car expenses', () => {
   beforeEach(() => {
-    cy.visit(`/`);
+    cy.visit(Cypress.env('baseUrl'));
+    //cy.visit(`/`);
     generalStep.loginValidRegisteredUser();
     generalStep.verifyUserIsLoggedIn();
   })
